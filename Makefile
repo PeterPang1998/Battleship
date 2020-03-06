@@ -14,4 +14,4 @@ battleships_asan: $(OBJ)
 	$(CC) -o $@ $^ $(CFLAG_SAN)
 	
 clean:
-	rm *.o
+	rm *.o battleships battleships_asan
