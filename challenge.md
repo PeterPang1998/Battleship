@@ -115,7 +115,7 @@ Carrier: A 0 H
 Battleship: D 5 V
 Destroyer: C 5 H
 Submarine: A 2 H
-Patrol Boat: G 7
+Patrol Boat: G 7 H
 
 
 Player 2, please set up your ships (x, y, orientation)
@@ -123,7 +123,7 @@ Carrier: A 0 H
 Battleship: D 5 V
 Destroyer: C 5 H
 Submarine: A 2 H
-Patrol Boat: G 7
+Patrol Boat: G 7 H
 
 All boats set up, Player 1 can now strike.
 ```
@@ -209,7 +209,7 @@ Carrier: A 0 H
 Battleship: D 5 V
 Destroyer: C 5 H
 Submarine: A 2 H
-Patrol Boat: G 7
+Patrol Boat: G 7 H
 
 
 Player 2, please set up your ships (x, y, orientation)
@@ -217,7 +217,7 @@ Carrier: A 0 H
 Battleship: D 5 V
 Destroyer: C 5 H
 Submarine: A 2 H
-Patrol Boat: G 7
+Patrol Boat: G 7 H
 
 All boats set up, Player 1 can now strike.
 
@@ -299,7 +299,7 @@ Destroyer: C 9 H
 Invalid ship configuration
 Destroyer: C 3 H
 Submarine: A 2 H
-Patrol Boat: G 7
+Patrol Boat: G 7 H
 
 ```
 
