@@ -1,5 +1,6 @@
 CC=clang
-CFLAGS=-Werror=vla -std=c11
+CFLAGS=-Werror=vla -Wextra -Wall -Wshadow -Wswitch-default -std=c11
+CFLAG_SAN=$(CFLAGS) -fsanitize=address
 DEPS=
 OBJ=battleships.o
 
@@ -8,6 +9,9 @@ OBJ=battleships.o
 
 battleships: $(OBJ)
 	$(CC) -o $@ $^ $(CFLAGS)
+	
+battleships_asan: $(OBJ)
+	$(CC) -o $@ $^ $(CFLAG_SAN)
 	
 clean:
 	rm *.o
