@@ -8,3 +8,6 @@ OBJ=battleships.o
 
 battleships: $(OBJ)
 	$(CC) -o $@ $^ $(CFLAGS)
+	
+clean:
+	rm *.o
