@@ -2,22 +2,21 @@
 
 Classic game comes to a classic programming language. You are to write a simple game of battleships. This involves two players and an assortment of ships. Each player is given their own set of ships (5) which will be of different variations. 
 
-Each player will have an 8x8 board, where the y axis is referred to by letters (A-H) while the x axis is referred to by numbers (1-8). You will need to translate these coordinates and also check if the player has already attempted to fire at that location.
+Each player will have an 8x8 board, where the y axis is referred to by letters (A-H) while the x axis is referred to by numbers (1-8). You will need to translate these coordinates for both a ship configuration board and hitboard.
 
 Each player will have their own configuration of ships, each ship will have a vertical or horizontal configuration and the set number of spaces that they occupy.
-
 
 Each player will get a chance to set up their ships prior to the game starting. Each player will need to set coordinates and an orientation for their ship. If the ship does not collide with any other ship that the player has and does not go outside of the bounds of the board, it will be accepted.
 
 
 ## Board
 
-Each player has their own 'hit' board which will record the cells they have hit. The board will be presented in a terminal window as a 8x8 grid. Each cell will have a `|` on left and rimght side.
+Each player has their own 'hit' board which will record the cells they have hit. The board will be presented in a terminal window as a 8x8 grid. Each cell will have a `|` on left and right side.
 
 
 ## Ship
 
-There are 5 ships for each player, each ship has a location on the board and a length and orientation. The length of a ship corresponds to the number of hittable sections, once a section has been hit, it will unable to be hit again. Once a ship has been hit the program should output `We have hit the target!`. Once the ship has been destroyed, the program should output `We have sunk your ` followed by the ship name.
+There are 5 ships for each player, each ship has a location on the board and a length and orientation. The length of a ship corresponds to the number of hittable sections, once a section has been hit, it will unable to be hit again. Once a ship has been hit the program should output `We have hit the target!`. Once the ship has been destroyed, the program should output `We have sunk your ` followed by the ship name. If the shot is missed, your program should output `You have missed!`.
 
 Example:
 `We have sunk your Carrier`
@@ -30,7 +29,7 @@ There are 5 different ships and are covers a different amount of cells
 * Destroyer, 3 cells
 * Submarine, 2 cells
 * Patrol Boat, 2 cells
-
+  
 
 ## Player
 
@@ -67,7 +66,6 @@ Left to right placement
 ```
 Destroyer at C 3 H
 
-
   1 2 3 4 5 6 7 8
 A| | | | | | | | |
 B| | | | | | | | |
@@ -83,7 +81,6 @@ Top to bottom placement
 
 ```
 Destroyer at D 2 V
-
 
   1 2 3 4 5 6 7 8
 A| | | | | | | | |
