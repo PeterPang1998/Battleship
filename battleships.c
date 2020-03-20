@@ -47,7 +47,7 @@ void draw(char board[8][8]){
          }
          printf("\n");
     }
-     printf("\n");
+
 }
 int check_valid(char board[8][8],int row, int col, char dir,int type){
     int length=type;
