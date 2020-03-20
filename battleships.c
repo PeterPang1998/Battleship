@@ -178,7 +178,7 @@ int main(){
     int counter2=0;
     while(counter2<5){
         strcpy(buffer_char,list_of_ships[counter2]);
-        printf("%s ",buffer_char);
+        printf("%s: ",buffer_char);
         fgets(buffer,100,stdin);
         sscanf(buffer,"%c %d %c",&row,&y,&direction);
         x=row-65;
@@ -226,7 +226,7 @@ int main(){
         else if ((first_round!=0)&&(finished==1)){
                 turn=(turn+1)%2;
                 printf("\n");
-                printf("Player %d's turn:\n\n",turn+1);
+                printf("Player %d's turn\n\n",turn+1);
             }
         fgets(buffer2,100,stdin);
         sscanf(buffer2," %s %c %d", command,&row2,&col2);
