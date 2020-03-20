@@ -192,6 +192,7 @@ int main(){
      }
     puts("All boats set up, Player 1 can now strike.");
         //set up finished 
+        draw(board1);
     char board_hit1[8][8];
     char board_hit2[8][8];
     set_orig(board_hit1);
