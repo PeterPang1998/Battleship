@@ -246,7 +246,6 @@ int main(){
                     draw(board_hit2);
                      finished=0;
                }
-               printf("\n");
             }
             row2=row2-65;
             
@@ -316,6 +315,9 @@ int main(){
             if(input_uncog==0){
                 puts("Unrecognised command");
 
+            }
+            if(finished==0){
+                printf("\n");
             }
         }
 
