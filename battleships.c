@@ -156,7 +156,7 @@ int main(){
             int checkresult=check_valid(board1,x,y,direction,ships_length[counter]);
             if(checkresult==1){
                 input_function(board1,x,y,direction,ships_length[counter],name_intial);
-                draw(board1);
+                //draw(board1);
                 counter++;
                                 }
             else if(checkresult==0){
@@ -181,7 +181,7 @@ int main(){
             int checkresult=check_valid(board2,x,y,direction,ships_length[counter]);
             if(checkresult==1){
                 input_function(board2,x,y,direction,ships_length[counter],name_intial);
-                draw(board2);
+                //draw(board2);
                 counter++;
             }
             else if(checkresult==0){
