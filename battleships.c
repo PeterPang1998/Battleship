@@ -206,7 +206,7 @@ int main(){
     int col2=0;
     int input_count=0;
     int game_on=0;
-    if(scanf("%99s ",buffer1)!=EOF){
+    if(fgets(buffer2,100,stdin)){
         game_on=1;
     }
     while(game_on==1){
