@@ -195,7 +195,6 @@ int main(){
         
     char board_hit1[8][8];
     char board_hit2[8][8];
-    draw(board_hit1);
     set_orig(board_hit1);
     set_orig(board_hit2);
     int collection1[6]={5,4,3,2,2};
@@ -211,6 +210,7 @@ int main(){
     //     game_on=1;
     // }
     while(game_on==1){
+        draw(board_hit1);
         printf("Player %d's turn: ",turn+1);
         fgets(buffer2,100,stdin);
         input_count=sscanf(buffer2," %s %c %d", command,&row2,&col2);
