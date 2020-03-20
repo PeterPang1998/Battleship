@@ -200,7 +200,6 @@ int main(){
     int collection2[6]={5,4,3,2,2};
     int turn=0;
     char command[10];
-    char buffer1[100];
     char buffer2[100];
     char row2; 
     int col2=0;
@@ -276,8 +275,9 @@ int main(){
                         turn=(turn+1)%2;
                      }
                 }
+            }else{
+                puts("Unrecognised command");
             }
-            puts("Unrecognised command");
         }
 
     
