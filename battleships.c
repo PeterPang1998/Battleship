@@ -30,7 +30,8 @@ void set_orig(char board[8][8]){
     for(int i=0;i<8;i++)
          memset(board[i], ' ',8);
 }
-void draw(char board[8][8]){  
+void draw(char board[8][8]){ 
+    print("\n") 
     int k=0;
     printf(" ");
     while(k<8){
@@ -97,8 +98,7 @@ char hit(char board_org[8][8],char board_hit[8][8],int x,int y){
     //printf("boat %c is hit!!",hit_result);
     return hit_result;
 }
-int record_hit
-(char all_boats[6][15],char initial,int record[5]){
+int record_hit(char all_boats[6][15],char initial,int record[5]){
     if(initial=='C'){
         record[0]= record[0]-1;
         if(record[0]==0){
