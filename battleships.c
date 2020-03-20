@@ -246,6 +246,7 @@ int main(){
                     draw(board_hit2);
                      finished=0;
                }
+               printf("\n");
             }
             row2=row2-65;
             
