@@ -178,7 +178,7 @@ int main(){
     int counter2=0;
     while(counter2<5){
         strcpy(buffer_char,list_of_ships[counter2]);
-        printf("%s: ",buffer_char);
+        printf("%s ",buffer_char);
         fgets(buffer,100,stdin);
         sscanf(buffer,"%c %d %c",&row,&y,&direction);
         x=row-65;
