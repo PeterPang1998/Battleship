@@ -279,6 +279,7 @@ int main(){
                 }
             
             if(hit_result!='N'&&(result1==0)){
+                printf("\n");
                 puts("We have hit the target!");
                 int win_or_not;
                 if((turn+1)==1){
@@ -302,6 +303,7 @@ int main(){
                     }
             }
             else if((hit_result=='N')&&(result1==0)){
+                printf("\n");
                 puts("You have missed!");
                 if((turn+1)==1){
                         //draw(board_hit1);
