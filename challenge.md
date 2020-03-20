@@ -80,7 +80,7 @@ H| | | | | | | | |
 Top to bottom placement
 
 ```
-Destroyer at D 2 V
+Destroyer at D 3 V
 
   1 2 3 4 5 6 7 8
 A| | | | | | | | |
@@ -107,19 +107,19 @@ Your program must support the following commands
 ### Example 1 (Configuration)
 
 ```
-Player 1, please set up your ships (x, y, orientation)
-Carrier: A 0 H
+Player 1, please set up your ships (y, x, orientation)
+Carrier: A 1 H
 Battleship: D 5 V
 Destroyer: C 5 H
-Submarine: A 2 H
+Submarine: B 2 H
 Patrol Boat: G 7 H
 
 
-Player 2, please set up your ships (x, y, orientation)
-Carrier: A 0 H
+Player 2, please set up your ships (y, x, orientation)
+Carrier: A 1 H
 Battleship: D 5 V
 Destroyer: C 5 H
-Submarine: A 2 H
+Submarine: B 2 H
 Patrol Boat: G 7 H
 
 All boats set up, Player 1 can now strike.
@@ -182,7 +182,7 @@ H| | | | | | | | |
 ### Example 5 (fire and sunk)
 
 ```
-fire B 4
+fire C 4
 
 We have sunk your Destroyer!
 
@@ -201,24 +201,24 @@ H| | | | | | | | |
 ### Example 6 (Common Scenario)
 
 ```
-Player 1, please set up your ships (x, y, orientation)
-Carrier: A 0 H
+Player 1, please set up your ships (y, x, orientation)
+Carrier: A 1 H
 Battleship: D 5 V
 Destroyer: C 5 H
-Submarine: A 2 H
+Submarine: B 2 H
 Patrol Boat: G 7 H
 
 
-Player 2, please set up your ships (x, y, orientation)
-Carrier: A 0 H
+Player 2, please set up your ships (y, x, orientation)
+Carrier: A 1 H
 Battleship: D 5 V
 Destroyer: C 5 H
-Submarine: A 2 H
+Submarine: B 2 H
 Patrol Boat: G 7 H
 
 All boats set up, Player 1 can now strike.
 
-fire A 1
+fire B 1
 
 You have missed!
 
@@ -246,7 +246,7 @@ shots
 
   1 2 3 4 5 6 7 8
 A| | | | | | | | |
-B| | | | | | | | |
+B|0| | | | | | | |
 C| | | | | | | | |
 D| | | | | | | | |
 E| | | | | | | | |
@@ -289,13 +289,13 @@ Player 1 wins!
 ### Example 1 (Invalid Ship Configuration)
 
 ```
-Player 1, please set up your ships (x, y, orientation)
-Carrier: A 0 H
+Player 1, please set up your ships (y, x, orientation)
+Carrier: A 1 H
 Battleship: D 5 V
 Destroyer: C 9 H
 Invalid ship configuration
 Destroyer: C 3 H
-Submarine: A 2 H
+Submarine: B 2 H
 Patrol Boat: G 7 H
 
 ```
@@ -319,5 +319,3 @@ You have already fired at this location
 ```
 Unrecognised command
 ```
-
-
