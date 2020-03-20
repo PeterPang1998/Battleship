@@ -142,28 +142,28 @@ int main(){
     char row;
     char direction;
     char buffer_char[15];
-    // while(counter<5){
-    //     strcpy(buffer_char,list_of_ships[counter]);
-    //     printf("%s: ",buffer_char);
-    //     fgets(buffer,100,stdin);
-    //     sscanf(buffer,"%c %d %c",&row,&y,&direction);
-    //     x=row-65;
-    //     y--;
-    //     if((y>7)||(x>7)||((direction!='V')&&(direction!='H'))){
-    //         counter+=0;
-    //     }else {
-    //         char name_intial= list_of_ships[counter][0];
-    //         int checkresult=check_valid(board1,x,y,direction,ships_length[counter]);
-    //         if(checkresult==1){
-    //             input_function(board1,x,y,direction,ships_length[counter],name_intial);
-    //             //draw(board1);
-    //             counter++;
-    //                             }
-    //         else if(checkresult==0){
-    //             counter=counter+0;
-    //                                  }
-    //         }
-    // }
+    while(counter<5){
+        strcpy(buffer_char,list_of_ships[counter]);
+        printf("%s: ",buffer_char);
+        fgets(buffer,100,stdin);
+        sscanf(buffer,"%c %d %c",&row,&y,&direction);
+        x=row-65;
+        y--;
+        if((y>7)||(x>7)||((direction!='V')&&(direction!='H'))){
+            counter+=0;
+        }else {
+            char name_intial= list_of_ships[counter][0];
+            int checkresult=check_valid(board1,x,y,direction,ships_length[counter]);
+            if(checkresult==1){
+                input_function(board1,x,y,direction,ships_length[counter],name_intial);
+                //draw(board1);
+                counter++;
+                                }
+            else if(checkresult==0){
+                counter=counter+0;
+                                     }
+            }
+    }
     player_counter=player_counter+1;
     printf("Player %d, please set up your ships (y, x, orientation)\n",player_counter);
     int counter2=0;
