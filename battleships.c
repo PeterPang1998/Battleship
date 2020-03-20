@@ -31,7 +31,7 @@ void set_orig(char board[8][8]){
          memset(board[i], ' ',8);
 }
 void draw(char board[8][8]){ 
-    print("\n") 
+    print("\n");
     int k=0;
     printf(" ");
     while(k<8){
