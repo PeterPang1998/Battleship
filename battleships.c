@@ -192,7 +192,7 @@ int main(){
      }
     puts("All boats set up, Player 1 can now strike.");
         //set up finished 
-        draw(board1);
+        draw(board_hit1);
     char board_hit1[8][8];
     char board_hit2[8][8];
     set_orig(board_hit1);
@@ -205,10 +205,10 @@ int main(){
     char row2; 
     int col2=0;
     int input_count=0;
-    int game_on=0;
-    if(fgets(buffer2,100,stdin)){
-        game_on=1;
-    }
+    int game_on=1;
+    // if(fgets(buffer2,100,stdin)){
+    //     game_on=1;
+    // }
     while(game_on==1){
         printf("Player %d's turn: ",turn+1);
         fgets(buffer2,100,stdin);
