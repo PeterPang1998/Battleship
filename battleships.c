@@ -183,14 +183,14 @@ int main(){
         sscanf(buffer,"%c %d %c",&row,&y,&direction);
         x=row-65;
         y--;
-        if((y>7)||(x>7)||(direction!='V'&&direction!='H')){
+        if((y>7)||(x>7)||((direction!='V')&&(direction!='H'))){
             counter2+=0;
         }else {
             char name_intial= list_of_ships[counter2][0];
             int checkresult=check_valid(board2,x,y,direction,ships_length[counter]);
             
             if(checkresult==1){
-                input_function(board2,x,y,direction,ships_length[counter],name_intial);
+                input_function(board2,x,y,direction,ships_length[counter2],name_intial);
                 //draw(board2);
                 counter2++;
             }
@@ -200,6 +200,10 @@ int main(){
         }
      }
     
+    // puts("this is board1");
+    // draw(board1);
+    // puts("this is board2");
+    // draw(board2);
         //set up finished 
         
     char board_hit1[8][8];
