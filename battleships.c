@@ -316,9 +316,7 @@ int main(){
                 puts("Unrecognised command");
 
             }
-            if(finished==0){
-                printf("\n");
-            }
+        
         }
 
     
