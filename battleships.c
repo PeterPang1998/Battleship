@@ -173,7 +173,7 @@ int main(){
             }
     }
     player_counter=player_counter+1;
-    printf("\n");
+    printf("\n\n");
     printf("Player %d, please set up your ships (y, x, orientation)\n",player_counter);
     int counter2=0;
     while(counter2<5){
@@ -220,7 +220,7 @@ int main(){
     while(game_on==1){
         if (first_round==0){
             printf("\n");
-            printf("All boats set up, Player %d can now strike.\n\n",turn+1);
+            printf("All boats set up, Player %d can now strike.\n",turn+1);
             first_round++;
         }
         else if ((first_round!=0)&&(finished==1)){
