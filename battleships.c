@@ -93,7 +93,7 @@ char hit(char board_org[8][8],char board_hit[8][8],int x,int y){
     }
     hit_result=board_org[x][y-1];
     board_hit[x][y-1]='X';
-    printf("boat %c is hit!!",hit_result);
+    //printf("boat %c is hit!!",hit_result);
     return hit_result;
 }
 void record_hit(char all_boats[6][15],char initial,int record[5]){
@@ -257,11 +257,11 @@ int main(){
             if(hit_result!='N'&&(result1==0)){
                 puts("We have hit the target!");
                 if((turn+1)==1){
-                        draw(board_hit1);
+                        //draw(board_hit1);
                         record_hit(list_of_ships,hit_result,collection1);
                         turn=(turn+1)%2;
                     }else if ((turn+1)==2){
-                        draw(board_hit2);
+                       // draw(board_hit2);
                         record_hit(list_of_ships,hit_result,collection2);
                         turn=(turn+1)%2;
                     }
