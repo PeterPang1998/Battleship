@@ -260,8 +260,9 @@ int main(){
                       turn+=0;
                   }else{
                     if(result1==0){
-                    hit_result=hit(board1,board_hit1,row2,col2);
+                    hit_result=hit(board2,board_hit1,row2,col2);
                    // printf("result %c 1\n ",hit_result);
+                     finished=1;
                   }
                 }
             }
@@ -269,10 +270,11 @@ int main(){
                   result1= check_before_hit(board_hit2,row2,col2);
                   if(result1==1){
                       turn+=0;
-                    finished=0;
+                    
                   }else{
-                  if(result1==0){
-                    hit_result=hit(board2,board_hit2,row2,col2);
+                    if(result1==0){
+                         hit_result=hit(board1,board_hit2,row2,col2);
+                         finished=1;
                     //printf("result %c 2\n",hit_result);
                     }
                   }
