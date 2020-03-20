@@ -5,8 +5,8 @@
 void input_function(char board[8][8],int row,int col,char dir,int type,char name){
     // ship_length length_value=type;
     int length=type;
-    printf("%d this is the length\n",length);
-    printf("%c this is the direction\n",dir);
+    // printf("%d this is the length\n",length);
+    // printf("%c this is the direction\n",dir);
     if(dir=='V'){
         int i=0;
         while(i<length){
