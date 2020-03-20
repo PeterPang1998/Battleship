@@ -200,11 +200,15 @@ int main(){
     int collection2[6]={5,4,3,2,2};
     int turn=0;
     char command[10];
+    char buffer1[100];
     char buffer2[100];
     char row2; 
     int col2=0;
     int input_count=0;
-    int game_on=1;
+    int game_on=0;
+    if(scanf("%99s ",buffer1)!=EOF){
+        game_on=1;
+    }
     while(game_on==1){
         printf("Player %d's turn: ",turn+1);
         fgets(buffer2,100,stdin);
