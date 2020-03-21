@@ -152,7 +152,7 @@ int main(){
     char row;
     char direction;
     char buffer_char[15];
-    while(counter<5){
+    while(counter<1){
         strcpy(buffer_char,list_of_ships[counter]);
         printf("%s: ",buffer_char);
         fgets(buffer,100,stdin);
@@ -180,7 +180,7 @@ int main(){
     printf("\n\n");
     printf("Player %d, please set up your ships (y, x, orientation)\n",player_counter);
     int counter2=0;
-    while(counter2<5){
+    while(counter2<1){
         strcpy(buffer_char,list_of_ships[counter2]);
         printf("%s: ",buffer_char);
         fgets(buffer,100,stdin);
@@ -233,6 +233,7 @@ int main(){
         }
         else if ((first_round!=0)&&(finished==1)){
                 turn=(turn+1)%2;
+                input_uncog=0;
                 printf("\n");
                 printf("Player %d's turn\n",turn+1);
             }
@@ -245,6 +246,7 @@ int main(){
                 return 0;
             }
         if(strcmp(command,"shots")==0){
+             //puts("hello 1");
                 input_uncog=1;
                if(turn==0){
                    draw(board_hit1);
@@ -259,6 +261,7 @@ int main(){
             
         if(strcmp(command,"fire")==0){
                 //puts("ready to fire");
+                // puts("hello 2");
                 input_uncog=1;
             char hit_result='\0';
             int result1=-1;
@@ -289,7 +292,7 @@ int main(){
                 }
             
             if(hit_result!='N'&&(result1==0)){
-                printf("\n");
+                // printf("\n");
                
                 int win_or_not;
                 if((turn+1)==1){
@@ -331,6 +334,7 @@ int main(){
                 }
             }
             if(input_uncog==0){
+                 //puts("hello 3");
                 puts("Unrecognised command");
 
             }
