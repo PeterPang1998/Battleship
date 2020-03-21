@@ -78,13 +78,19 @@ int check_valid(char board[8][8],int row, int col, char dir,int type){
     return 1;
 }
 int check_before_hit(char board[8][8],int row, int col){
+
     if(row>7||col>8){
+        printf("\n");
         puts("Invalid coordinates");
+        
+        printf("\n");
         return 1;
     }
     else if(board[row][col-1]==' '){return 0;}
     else if (board[row][col-1]==(char)'0'||board[row][col-1]=='X'){
+        printf("\n");
         puts("You have already fired at this location");
+        printf("\n");
         return 1;
     }
     return 1;
@@ -157,7 +163,7 @@ int main(){
     char row;
     char direction;
     char buffer_char[15];
-    while(counter<5){
+    while(counter<1){
         strcpy(buffer_char,list_of_ships[counter]);
         printf("%s: ",buffer_char);
         fgets(buffer,100,stdin);
@@ -184,7 +190,7 @@ int main(){
     printf("\n\n");
     printf("Player %d, please set up your ships (y, x, orientation)\n",player_counter);
     int counter2=0;
-    while(counter2<5){
+    while(counter2<1){
         strcpy(buffer_char,list_of_ships[counter2]);
         printf("%s: ",buffer_char);
         fgets(buffer,100,stdin);
@@ -242,6 +248,7 @@ int main(){
                 printf("Player %d's turn\n\n",turn+1);
             }
         fgets(buffer2,100,stdin);
+        //printf("%c--> buffer2",buffer2[6]);
         sscanf(buffer2," %s %c %d", command,&row2,&col2);
         if(strcmp(command,"exit")==0){
                 //puts("end of the game");
@@ -251,6 +258,7 @@ int main(){
         if(strcmp(command,"shots")==0){
              //puts("hello 1");
                 input_uncog=1;
+               
                if(turn==0){
                    draw(board_hit1);
                    finished=0;
@@ -267,86 +275,90 @@ int main(){
                 //puts("ready to fire");
                 // puts("hello 2");
                 input_uncog=1;
-            char hit_result='\0';
-            int result1=-1;
-            if((turn+1)==1){
-                  result1= check_before_hit(board_hit1,row2,col2);
-                  if(result1==1){
-                      turn+=0;
-                  }else{
-                    if(result1==0){
-                    hit_result=hit(board2,board_hit1,row2,col2);
-                   // printf("result %c 1\n ",hit_result);
-                     finished=1;
-                  }
-                }
-            }
-            else if ((turn+1)==2){
-                  result1= check_before_hit(board_hit2,row2,col2);
-                  if(result1==1){
-                      turn+=0;
-                      finished=0;
-                  }else{
-                    if(result1==0){
-                         hit_result=hit(board1,board_hit2,row2,col2);
-                         finished=1;
-                    //printf("result %c 2\n",hit_result);
-                    }
-                  }
-                }
-            
-            if(hit_result!='N'&&(result1==0)){
-                // printf("\n");
-               
-                int win_or_not;
+            if(buffer2[6]!=' '){
+                printf("\nInvalid coordinates\n");
+            }else{
+                char hit_result='\0';
+                int result1=-1;
                 if((turn+1)==1){
-                        //draw(board_hit1);
-                        win_or_not=record_hit(list_of_ships,hit_result,collection1);
+                    result1= check_before_hit(board_hit1,row2,col2);
+                    if(result1==1){
+                        turn+=0;
+                    }else{
+                        if(result1==0){
+                        hit_result=hit(board2,board_hit1,row2,col2);
+                    // printf("result %c 1\n ",hit_result);
                         finished=1;
-                        if(win_or_not==0){
-                            printf("Player %d wins!",turn+1);
-                            return 0;
+                    }
+                    }
+                }
+                else if ((turn+1)==2){
+                    result1= check_before_hit(board_hit2,row2,col2);
+                    if(result1==1){
+                        turn+=0;
+                        finished=0;
+                    }else{
+                        if(result1==0){
+                            hit_result=hit(board1,board_hit2,row2,col2);
+                            finished=1;
+                        //printf("result %c 2\n",hit_result);
                         }
-                        else if(win_or_not==1){
-                            printf("\n");
-                            puts("We have hit the target!");
-                            printf("\n");
-                        }else if(win_or_not==2){
+                    }
+                    }
+                
+                if(hit_result!='N'&&(result1==0)){
+                    // printf("\n");
+                
+                    int win_or_not;
+                    if((turn+1)==1){
+                            //draw(board_hit1);
+                            win_or_not=record_hit(list_of_ships,hit_result,collection1);
+                            finished=1;
+                            if(win_or_not==0){
+                                printf("Player %d wins!",turn+1);
+                                return 0;
+                            }
+                            else if(win_or_not==1){
+                                printf("\n");
+                                puts("We have hit the target!");
+                                printf("\n");
+                            }else if(win_or_not==2){
+                                finished=1;
+                            }
+                        
+                        }else if ((turn+1)==2){
+                        // draw(board_hit2);
+                            win_or_not=record_hit(list_of_ships,hit_result,collection2);
+                            finished=1;
+                            if(win_or_not==0){
+                                printf("\n");
+                                printf("Player %d wins!",turn+1);
+                                printf("\n");
+                                return 0;
+                            }
+                            else if(win_or_not==1){
+
+                                printf("\n");
+                                puts("We have hit the target!");
+                                printf("\n");
+                                
+                            }
+                            // turn=(turn+1)%2;
+                        }
+                }
+                else if((hit_result=='N')&&(result1==0)){
+                    printf("\n");
+                    puts("You have missed!");
+                    printf("\n");
+                    if((turn+1)==1){
+                            //draw(board_hit1);
+                            finished=1;
+                        }else if ((turn+1)==2){
+                            //draw(board_hit2);
                             finished=1;
                         }
-                       
-                    }else if ((turn+1)==2){
-                       // draw(board_hit2);
-                        win_or_not=record_hit(list_of_ships,hit_result,collection2);
-                         finished=1;
-                        if(win_or_not==0){
-                            printf("\n");
-                            printf("Player %d wins!",turn+1);
-                            printf("\n");
-                            return 0;
-                        }
-                         else if(win_or_not==1){
-
-                             printf("\n");
-                             puts("We have hit the target!");
-                             printf("\n");
-                             
-                        }
-                        // turn=(turn+1)%2;
-                    }
-            }
-            else if((hit_result=='N')&&(result1==0)){
-                printf("\n");
-                puts("You have missed!");
-                printf("\n");
-                if((turn+1)==1){
-                        //draw(board_hit1);
-                         finished=1;
-                    }else if ((turn+1)==2){
-                        //draw(board_hit2);
-                         finished=1;
-                     }
                 }
+        }
             }
             if(input_uncog==0){
                  //puts("hello 3");
