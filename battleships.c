@@ -47,6 +47,7 @@ void draw(char board[8][8]){
          }
          printf("\n");
     }
+     printf("\n");
 
 }
 int check_valid(char board[8][8],int row, int col, char dir,int type){
@@ -152,7 +153,7 @@ int main(){
     char row;
     char direction;
     char buffer_char[15];
-    while(counter<5){
+    while(counter<1){
         strcpy(buffer_char,list_of_ships[counter]);
         printf("%s: ",buffer_char);
         fgets(buffer,100,stdin);
@@ -180,7 +181,7 @@ int main(){
     printf("\n\n");
     printf("Player %d, please set up your ships (y, x, orientation)\n",player_counter);
     int counter2=0;
-    while(counter2<5){
+    while(counter2<1){
         strcpy(buffer_char,list_of_ships[counter2]);
         printf("%s: ",buffer_char);
         fgets(buffer,100,stdin);
@@ -226,6 +227,7 @@ int main(){
     int first_round=0;
     int finished=0;
     while(game_on==1){
+        input_uncog=0;
         if (first_round==0){
             printf("\n");
             printf("All boats set up, Player %d can now strike.\n",turn+1);
@@ -340,6 +342,7 @@ int main(){
             if(input_uncog==0){
                  //puts("hello 3");
                 puts("Unrecognised command");
+                finished=0;
 
             }
         
