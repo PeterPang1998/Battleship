@@ -52,7 +52,10 @@ void draw(char board[8][8]){
 int check_valid(char board[8][8],int row, int col, char dir,int type){
     int length=type;
     // puts("hello");
-    
+    if(row<0||col<0){
+        puts("Invalid ship configuration");
+                        return 0;
+    }
     if(dir=='V'){
             int i=0;
             while(i<length){
@@ -79,7 +82,7 @@ int check_valid(char board[8][8],int row, int col, char dir,int type){
 }
 int check_before_hit(char board[8][8],int row, int col){
 
-    if(row>7||col>8){
+    if(row>7||col>8||row<0||col<0){
         // printf("\n");
         puts("Invalid coordinates");
         
@@ -175,7 +178,6 @@ int main(){
     while(counter<5){
         strcpy(buffer_char,list_of_ships[counter]);
         printf("%s: ",buffer_char);
-        printf("%s<--value enter ",buffer);
         fgets(buffer,100,stdin);
         count_input=sscanf(buffer,"%c %d %c",&row,&y,&direction);
         x=row-65;
@@ -204,7 +206,7 @@ int main(){
         strcpy(buffer_char,list_of_ships[counter2]);
         printf("%s: ",buffer_char);
         fgets(buffer,100,stdin);
-        printf("%s<--value enter ",buffer);
+        
         sscanf(buffer,"%c %d %c",&row,&y,&direction);
         x=row-65;
         y--;
