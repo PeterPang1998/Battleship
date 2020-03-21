@@ -85,7 +85,6 @@ int check_before_hit(char board[8][8],int row, int col){
     if(row>7||col>8||row<0||col<0){
         // printf("\n");
         puts("Invalid coordinates");
-        
         // printf("\n");
         return 1;
     }
@@ -292,7 +291,7 @@ int main(){
                 // puts("hello 2");
                 input_uncog=1;
             if((buffer2[6]!=' ')||(count_input2<3)||(col2<=0)){
-                printf("\nInvalid coordinates\n");
+                printf("Invalid coordinates");
                 finished=0;
             }else{
                 char hit_result='\0';
