@@ -232,14 +232,12 @@ int main(){
     while(game_on==1){
         input_uncog=0;
         if (first_round==0){
-            printf("\n");
             printf("All boats set up, Player %d can now strike.\n",turn+1);
             first_round++;
         }
         else if ((first_round!=0)&&(finished==1)){
                 turn=(turn+1)%2;
                 input_uncog=0;
-                printf("\n");
                 printf("Player %d's turn\n\n",turn+1);
             }
         fgets(buffer2,100,stdin);
@@ -309,7 +307,6 @@ int main(){
                             return 0;
                         }
                         else if(win_or_not==1){
-                            printf("\n");
                             puts("We have hit the target!");
                        
                         }else if(win_or_not==2){
@@ -333,7 +330,6 @@ int main(){
                     }
             }
             else if((hit_result=='N')&&(result1==0)){
-                printf("\n");
                 puts("You have missed!");
                 if((turn+1)==1){
                         //draw(board_hit1);
