@@ -171,14 +171,15 @@ int main(){
     char row;
     char direction;
     char buffer_char[15];
+    int count_input;
     while(counter<5){
         strcpy(buffer_char,list_of_ships[counter]);
         printf("%s: ",buffer_char);
         fgets(buffer,100,stdin);
-        sscanf(buffer,"%c %d %c",&row,&y,&direction);
+        count_input=sscanf(buffer,"%c %d %c",&row,&y,&direction);
         x=row-65;
         y--;
-        if((y>7)||(x>7)||((direction!='V')&&(direction!='H'))){
+        if((y>7)||(x>7)||((direction!='V')&&(direction!='H'))||count_input!=3){
             puts("Invalid ship configuration");
 
         }else {
