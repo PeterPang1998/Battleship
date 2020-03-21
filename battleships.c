@@ -110,7 +110,7 @@ int record_hit(char all_boats[6][15],char initial,int record[5]){
     if(initial=='C'){
         record[0]= record[0]-1;
         if(record[0]==0){
-            printf("We have sunk your %s!", all_boats[0]);
+            printf("We have sunk your %s!\n", all_boats[0]);
             return 2;
         }
     }
