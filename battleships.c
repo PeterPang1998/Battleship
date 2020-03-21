@@ -305,6 +305,7 @@ int main(){
                         }
                         else if(win_or_not==1){
                              puts("We have hit the target!");
+                             printf("\n");
                              
                         }
                        
@@ -318,6 +319,7 @@ int main(){
                         }
                          else if(win_or_not==1){
                              puts("We have hit the target!");
+                             printf("\n");
                         }
                         // turn=(turn+1)%2;
                     }
