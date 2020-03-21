@@ -244,7 +244,6 @@ int main(){
             }
         fgets(buffer2,100,stdin);
         sscanf(buffer2," %s %c %d", command,&row2,&col2);
-        printf("\n");
         if(strcmp(command,"exit")==0){
                 //puts("end of the game");
 
@@ -310,7 +309,7 @@ int main(){
                             return 0;
                         }
                         else if(win_or_not==1){
-                            // printf("\n");
+                            printf("\n");
                             puts("We have hit the target!");
                        
                         }else if(win_or_not==2){
