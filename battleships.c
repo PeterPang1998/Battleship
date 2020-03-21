@@ -308,8 +308,9 @@ int main(){
                             return 0;
                         }
                         else if(win_or_not==1){
+                            printf("\n");
                             puts("We have hit the target!");
-                       
+                            printf("\n");
                         }else if(win_or_not==2){
                             finished=1;
                         }
@@ -319,19 +320,25 @@ int main(){
                         win_or_not=record_hit(list_of_ships,hit_result,collection2);
                          finished=1;
                         if(win_or_not==0){
+                            printf("\n");
                             printf("Player %d wins!",turn+1);
+                            printf("\n");
                             return 0;
                         }
                          else if(win_or_not==1){
-                            //  printf("\n");
+
+                             printf("\n");
                              puts("We have hit the target!");
+                             printf("\n");
                              
                         }
                         // turn=(turn+1)%2;
                     }
             }
             else if((hit_result=='N')&&(result1==0)){
+                printf("\n");
                 puts("You have missed!");
+                printf("\n");
                 if((turn+1)==1){
                         //draw(board_hit1);
                          finished=1;
@@ -343,7 +350,9 @@ int main(){
             }
             if(input_uncog==0){
                  //puts("hello 3");
+                 printf("\n");
                 puts("Unrecognised command");
+                printf("\n");
                 finished=0;
 
             }
