@@ -105,27 +105,32 @@ int record_hit(char all_boats[6][15],char initial,int record[5]){
         record[0]= record[0]-1;
         if(record[0]==0){
             printf("We have sunk your %s!", all_boats[0]);
+            return 2;
         }
     }
     else if(initial=='B'){
         record[1]= record[1]-1;
         if(record[1]==0){
             printf("We have sunk your %s!\n", all_boats[1]);
+            return 2;
         }
     }else if(initial=='D'){
         record[2]= record[2]-1;
         if(record[2]==0){
             printf("We have sunk your %s!\n", all_boats[2]);
+            return 2;
         }
     }else if(initial=='S'){
         record[3]= record[3]-1;
         if(record[3]==0){
             printf("We have sunk your %s!\n", all_boats[3]);
+            return 2;
         }
     }else if(initial=='P'){
         record[4]= record[4]-1;
         if(record[4]==0){
             printf("We have sunk your %s!\n", all_boats[4]);
+            return 2;
         }
     }
     for (int i=0;i<5;i++){
@@ -152,7 +157,7 @@ int main(){
     char row;
     char direction;
     char buffer_char[15];
-    while(counter<5){
+    while(counter<1){
         strcpy(buffer_char,list_of_ships[counter]);
         printf("%s: ",buffer_char);
         fgets(buffer,100,stdin);
@@ -160,7 +165,6 @@ int main(){
         x=row-65;
         y--;
         if((y>7)||(x>7)||((direction!='V')&&(direction!='H'))){
-         
             puts("Invalid ship configuration");
 
         }else {
@@ -180,7 +184,7 @@ int main(){
     printf("\n\n");
     printf("Player %d, please set up your ships (y, x, orientation)\n",player_counter);
     int counter2=0;
-    while(counter2<5){
+    while(counter2<1){
         strcpy(buffer_char,list_of_ships[counter2]);
         printf("%s: ",buffer_char);
         fgets(buffer,100,stdin);
@@ -188,7 +192,7 @@ int main(){
         x=row-65;
         y--;
         if((y>7)||(x>7)||((direction!='V')&&(direction!='H'))){
-            counter2+=0;
+            puts("Invalid ship configuration");
         }else {
             char name_intial= list_of_ships[counter2][0];
             int checkresult=check_valid(board2,x,y,direction,ships_length[counter]);
@@ -283,7 +287,7 @@ int main(){
                   result1= check_before_hit(board_hit2,row2,col2);
                   if(result1==1){
                       turn+=0;
-                    
+                      finished=0;
                   }else{
                     if(result1==0){
                          hit_result=hit(board1,board_hit2,row2,col2);
@@ -309,6 +313,8 @@ int main(){
                             // printf("\n");
                             puts("We have hit the target!");
                        
+                        }else if(win_or_not==2){
+                            finished=1;
                         }
                        
                     }else if ((turn+1)==2){
