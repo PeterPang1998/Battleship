@@ -285,6 +285,7 @@ int main(){
                 input_uncog=1;
             if(buffer2[6]!=' '){
                 printf("\nInvalid coordinates\n");
+                finished=0;
             }else{
                 char hit_result='\0';
                 int result1=-1;
@@ -377,6 +378,30 @@ int main(){
                 finished=0;
 
             }
+            int win=1;
+            if(turn==0){
+                for(int i=0;i<5;i++){
+                 if(collection1[i]!=0){
+                     win=0;
+                 }
+                }
+                if(win==1){
+                    printf("Player %d wins!",turn+1);
+                    game_on=0;
+                }
+            }
+            else if(turn==1){
+                for(int i=0;i<5;i++){
+                 if(collection2[i]!=0){
+                     win=0;
+                 }
+                }
+                if(win==1){
+                    printf("Player %d wins!",turn+1);
+                    game_on=0;
+                }
+            }
+
         }
 
     
