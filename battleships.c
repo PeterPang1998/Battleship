@@ -60,7 +60,7 @@ int check_valid(char board[8][8],int row, int col, char dir,int type){
             int i=0;
             while(i<length){
                 if(board[row+i][col]!=' '){
-                    puts("Invalid ship configuration");
+                    puts("Invalid ship configuration vert");
                         return 0;
                     } 
                     i++;  
@@ -71,7 +71,7 @@ int check_valid(char board[8][8],int row, int col, char dir,int type){
         int i=0;
             while(i<length){
                 if(board[row][col+i]!=' '){
-                    puts("Invalid ship configuration");
+                    puts("Invalid ship configuration horz");
                         return 0;
                     } 
                     i++;  
@@ -208,15 +208,14 @@ int main(){
         fgets(buffer,100,stdin);
         
         sscanf(buffer,"%c %d %c",&row,&y,&direction);
-        printf("%c %d %c_loc\n",row,y,direction);
+        // printf("%c %d %c_loc\n",row,y,direction);
         x=row-65;
         y--;
         if((y>7)||(x>7)||((direction!='V')&&(direction!='H'))){
             puts("Invalid ship configuration");
         }else {
             char name_intial= list_of_ships[counter2][0];
-            int checkresult=check_valid(board2,x,y,direction,ships_length[counter]);
-            
+            int checkresult=check_valid(board2,x,y,direction,ships_length[counter2]);
             if(checkresult==1){
                 input_function(board2,x,y,direction,ships_length[counter2],name_intial);
                 //draw(board2);
