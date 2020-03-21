@@ -51,11 +51,13 @@ void draw(char board[8][8]){
 }
 int check_valid(char board[8][8],int row, int col, char dir,int type){
     int length=type;
+    puts("hello");
+    
     if(dir=='V'){
             int i=0;
             while(i<length){
                 if(board[row+i][col]!=' '){
-                    puts("Invalid coordinates");
+                    puts("Invalid ship configuration");
                         return 0;
                     } 
                     i++;  
@@ -66,7 +68,7 @@ int check_valid(char board[8][8],int row, int col, char dir,int type){
         int i=0;
             while(i<length){
                 if(board[row][col+i]!=' '){
-                    puts("Invalid coordinates");
+                    puts("Invalid ship configuration");
                         return 0;
                     } 
                     i++;  
@@ -158,7 +160,9 @@ int main(){
         x=row-65;
         y--;
         if((y>7)||(x>7)||((direction!='V')&&(direction!='H'))){
-            counter+=0;
+         
+            puts("Invalid ship configuration");
+
         }else {
             char name_intial= list_of_ships[counter][0];
             int checkresult=check_valid(board1,x,y,direction,ships_length[counter]);
