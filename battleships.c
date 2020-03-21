@@ -88,9 +88,7 @@ int check_before_hit(char board[8][8],int row, int col){
     }
     else if(board[row][col-1]==' '){return 0;}
     else if (board[row][col-1]==(char)'0'||board[row][col-1]=='X'){
-        printf("\n");
         puts("You have already fired at this location");
-        printf("\n");
         return 1;
     }
     return 1;
@@ -294,6 +292,7 @@ int main(){
                     result1= check_before_hit(board_hit1,row2,col2);
                     if(result1==1){
                         turn+=0;
+                        finished=0;
                     }else{
                         if(result1==0){
                         hit_result=hit(board2,board_hit1,row2,col2);
