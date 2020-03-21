@@ -60,7 +60,7 @@ int check_valid(char board[8][8],int row, int col, char dir,int type){
             int i=0;
             while(i<length){
                 if(board[row+i][col]!=' '){
-                    puts("Invalid ship configuration vert");
+                    puts("Invalid ship configuration");
                         return 0;
                     } 
                     i++;  
@@ -71,7 +71,7 @@ int check_valid(char board[8][8],int row, int col, char dir,int type){
         int i=0;
             while(i<length){
                 if(board[row][col+i]!=' '){
-                    puts("Invalid ship configuration horz");
+                    puts("Invalid ship configuration");
                         return 0;
                     } 
                     i++;  
