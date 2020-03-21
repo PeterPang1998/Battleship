@@ -240,7 +240,7 @@ int main(){
                 turn=(turn+1)%2;
                 input_uncog=0;
                 printf("\n");
-                printf("Player %d's turn\n",turn+1);
+                printf("Player %d's turn\n\n",turn+1);
             }
         fgets(buffer2,100,stdin);
         sscanf(buffer2," %s %c %d", command,&row2,&col2);
