@@ -82,7 +82,7 @@ int check_valid(char board[8][8],int row, int col, char dir,int type){
 }
 int check_before_hit(char board[8][8],int row, int col){
 
-    if(row>7||col>8||row<=0||col<=0){
+    if(row>7||col>8||col<=1){
         // printf("\n");
         puts("Invalid coordinates");
         
