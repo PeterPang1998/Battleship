@@ -232,7 +232,7 @@ int main(){
     while(game_on==1){
         input_uncog=0;
         if (first_round==0){
-            printf("\n")
+            printf("\n");
             printf("All boats set up, Player %d can now strike.\n\n",turn+1);
             first_round++;
         }
