@@ -51,7 +51,7 @@ void draw(char board[8][8]){
 }
 int check_valid(char board[8][8],int row, int col, char dir,int type){
     int length=type;
-    puts("hello");
+    // puts("hello");
     
     if(dir=='V'){
             int i=0;
