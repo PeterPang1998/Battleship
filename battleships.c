@@ -80,10 +80,10 @@ int check_valid(char board[8][8],int row, int col, char dir,int type){
 int check_before_hit(char board[8][8],int row, int col){
 
     if(row>7||col>8){
-        printf("\n");
+        // printf("\n");
         puts("Invalid coordinates");
         
-        printf("\n");
+        // printf("\n");
         return 1;
     }
     else if(board[row][col-1]==' '){return 0;}
