@@ -175,6 +175,7 @@ int main(){
     while(counter<5){
         strcpy(buffer_char,list_of_ships[counter]);
         printf("%s: ",buffer_char);
+        printf("%s<--value enter ",buffer);
         fgets(buffer,100,stdin);
         count_input=sscanf(buffer,"%c %d %c",&row,&y,&direction);
         x=row-65;
@@ -245,6 +246,7 @@ int main(){
     int first_round=0;
     int finished=0;
     int count_input2=0;
+
     while(game_on==1){
         input_uncog=0;
         if (first_round==0){
@@ -260,6 +262,7 @@ int main(){
         fgets(buffer2,100,stdin);
         //printf("%c--> buffer2",buffer2[6]);
         count_input2=sscanf(buffer2," %s %c %d", command,&row2,&col2);
+         printf("%s<--value enter ",buffer2);
         if(strcmp(command,"exit")==0){
                 //puts("end of the game");
 
