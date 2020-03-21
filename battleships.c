@@ -82,7 +82,7 @@ int check_valid(char board[8][8],int row, int col, char dir,int type){
 }
 int check_before_hit(char board[8][8],int row, int col){
 
-    if(row>7||col>8||row<0||col<0){
+    if(row>7||col>8||row<=0||col<=0){
         // printf("\n");
         puts("Invalid coordinates");
         
@@ -265,7 +265,7 @@ int main(){
         fgets(buffer2,100,stdin);
         //printf("%c--> buffer2",buffer2[6]);
         count_input2=sscanf(buffer2," %s %c %d", command,&row2,&col2);
-        printf(" %s %c %d<--action enter\n",command,row2,col2);
+        //printf(" %s %c %d<--action enter\n",command,row2,col2);
         if(strcmp(command,"exit")==0){
                 //puts("end of the game");
 
