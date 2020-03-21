@@ -344,7 +344,6 @@ int main(){
                 finished=0;
 
             }
-            printf("\n");
         }
 
     
