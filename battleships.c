@@ -206,8 +206,9 @@ int main(){
         strcpy(buffer_char,list_of_ships[counter2]);
         printf("%s: ",buffer_char);
         fgets(buffer,100,stdin);
-        printf("%s<--value enter ",buffer);
+        
         sscanf(buffer,"%c %d %c",&row,&y,&direction);
+        printf("%c %d %c_loc",row,y,direction);
         x=row-65;
         y--;
         if((y>7)||(x>7)||((direction!='V')&&(direction!='H'))){
