@@ -304,8 +304,8 @@ int main(){
                             return 0;
                         }
                         else if(win_or_not==1){
-                            printf("\n");
-                             puts("We have hit the target!");
+                            // printf("\n");
+                            puts("We have hit the target!");
                        
                         }
                        
@@ -318,7 +318,7 @@ int main(){
                             return 0;
                         }
                          else if(win_or_not==1){
-                             printf("\n");
+                            //  printf("\n");
                              puts("We have hit the target!");
                              
                         }
