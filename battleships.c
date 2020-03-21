@@ -265,7 +265,7 @@ int main(){
         fgets(buffer2,100,stdin);
         //printf("%c--> buffer2",buffer2[6]);
         count_input2=sscanf(buffer2," %s %c %d", command,&row2,&col2);
-         printf(" %s %c %d<--action enter\n",command,row2,col2);
+         //printf(" %s %c %d<--action enter\n",command,row2,col2);
         if(strcmp(command,"exit")==0){
                 //puts("end of the game");
 
