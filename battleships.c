@@ -250,12 +250,10 @@ int main(){
                 input_uncog=1;
                if(turn==0){
                    draw(board_hit1);
-                   printf("\n");
                    finished=0;
                }
                else if(turn==1){
                     draw(board_hit2);
-                     printf("\n");
                      finished=0;
                }
             }
