@@ -204,7 +204,7 @@ int main(){
         strcpy(buffer_char,list_of_ships[counter2]);
         printf("%s: ",buffer_char);
         fgets(buffer,100,stdin);
-        printf("%s<--value enter ",buffer2);
+        printf("%s<--value enter ",buffer);
         sscanf(buffer,"%c %d %c",&row,&y,&direction);
         x=row-65;
         y--;
