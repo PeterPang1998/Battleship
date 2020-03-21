@@ -208,7 +208,7 @@ int main(){
         fgets(buffer,100,stdin);
         
         sscanf(buffer,"%c %d %c",&row,&y,&direction);
-        printf("%c %d %c_loc",row,y,direction);
+        printf("%c %d %c_loc\n",row,y,direction);
         x=row-65;
         y--;
         if((y>7)||(x>7)||((direction!='V')&&(direction!='H'))){
@@ -266,7 +266,7 @@ int main(){
         fgets(buffer2,100,stdin);
         //printf("%c--> buffer2",buffer2[6]);
         count_input2=sscanf(buffer2," %s %c %d", command,&row2,&col2);
-        //  printf("%s<--value enter ",buffer2);
+         printf(" %s %c %d<--action enter\n",command,row2,col2);
         if(strcmp(command,"exit")==0){
                 //puts("end of the game");
 
