@@ -206,7 +206,9 @@ int main(){
         strcpy(buffer_char,list_of_ships[counter2]);
         printf("%s: ",buffer_char);
         fgets(buffer,100,stdin);
+        
         sscanf(buffer,"%c %d %c",&row,&y,&direction);
+        // printf("%c %d %c_loc\n",row,y,direction);
         x=row-65;
         y--;
         if((y>7)||(x>7)||((direction!='V')&&(direction!='H'))){
@@ -224,6 +226,13 @@ int main(){
             }
         }
      }
+    
+    // puts("this is board1");
+    // draw(board1);
+    // puts("this is board2");
+    // draw(board2);
+        //set up finished 
+        
     char board_hit1[8][8];
     char board_hit2[8][8];
     set_orig(board_hit1);
@@ -256,7 +265,7 @@ int main(){
         fgets(buffer2,100,stdin);
         //printf("%c--> buffer2",buffer2[6]);
         count_input2=sscanf(buffer2," %s %c %d", command,&row2,&col2);
-        //printf(" %s %c %d<--action enter\n",command,row2,col2);
+         //printf(" %s %c %d<--action enter\n",command,row2,col2);
         if(strcmp(command,"exit")==0){
                 //puts("end of the game");
 
@@ -274,7 +283,7 @@ int main(){
                     draw(board_hit2);
                      finished=0;
                }
-                // printf("\n");
+                printf("\n");
             }
             row2=row2-65;
             
@@ -283,7 +292,7 @@ int main(){
                 // puts("hello 2");
                 input_uncog=1;
             if((buffer2[6]!=' ')||(count_input2<3)||(col2<=0)){
-                printf("Invalid coordinates");
+                printf("\nInvalid coordinates\n");
                 finished=0;
             }else{
                 char hit_result='\0';
