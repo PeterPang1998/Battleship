@@ -119,25 +119,33 @@ int record_hit(char all_boats[6][15],char initial,int record[5]){
     else if(initial=='B'){
         record[1]= record[1]-1;
         if(record[1]==0){
+            printf("\n");
             printf("We have sunk your %s!\n", all_boats[1]);
+            printf("\n");
             return 2;
         }
     }else if(initial=='D'){
         record[2]= record[2]-1;
         if(record[2]==0){
+            printf("\n");
             printf("We have sunk your %s!\n", all_boats[2]);
+            printf("\n");
             return 2;
         }
     }else if(initial=='S'){
         record[3]= record[3]-1;
         if(record[3]==0){
+            printf("\n");
             printf("We have sunk your %s!\n", all_boats[3]);
+            printf("\n");
             return 2;
         }
     }else if(initial=='P'){
         record[4]= record[4]-1;
         if(record[4]==0){
+            printf("\n");
             printf("We have sunk your %s!\n", all_boats[4]);
+            printf("\n");
             return 2;
         }
     }
