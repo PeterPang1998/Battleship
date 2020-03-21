@@ -82,7 +82,7 @@ int check_valid(char board[8][8],int row, int col, char dir,int type){
 }
 int check_before_hit(char board[8][8],int row, int col){
 
-    if(row>7||col>8||col<=1){
+    if(row>7||col>8||(col-1)<=0){
         // printf("\n");
         puts("Invalid coordinates");
         
@@ -175,7 +175,7 @@ int main(){
     char direction;
     char buffer_char[15];
     int count_input;
-    while(counter<5){
+    while(counter<1){
         strcpy(buffer_char,list_of_ships[counter]);
         printf("%s: ",buffer_char);
         fgets(buffer,100,stdin);
@@ -202,7 +202,7 @@ int main(){
     printf("\n\n");
     printf("Player %d, please set up your ships (y, x, orientation)\n",player_counter);
     int counter2=0;
-    while(counter2<5){
+    while(counter2<1){
         strcpy(buffer_char,list_of_ships[counter2]);
         printf("%s: ",buffer_char);
         fgets(buffer,100,stdin);
