@@ -172,7 +172,7 @@ int main(){
     char direction;
     char buffer_char[15];
     int count_input;
-    while(counter<5){
+    while(counter<1){
         strcpy(buffer_char,list_of_ships[counter]);
         printf("%s: ",buffer_char);
         fgets(buffer,100,stdin);
@@ -199,7 +199,7 @@ int main(){
     printf("\n\n");
     printf("Player %d, please set up your ships (y, x, orientation)\n",player_counter);
     int counter2=0;
-    while(counter2<5){
+    while(counter2<1){
         strcpy(buffer_char,list_of_ships[counter2]);
         printf("%s: ",buffer_char);
         fgets(buffer,100,stdin);
@@ -244,6 +244,7 @@ int main(){
     int game_on=1;
     int first_round=0;
     int finished=0;
+    int count_input2=0;
     while(game_on==1){
         input_uncog=0;
         if (first_round==0){
@@ -258,7 +259,7 @@ int main(){
             }
         fgets(buffer2,100,stdin);
         //printf("%c--> buffer2",buffer2[6]);
-        sscanf(buffer2," %s %c %d", command,&row2,&col2);
+        count_input2=sscanf(buffer2," %s %c %d", command,&row2,&col2);
         if(strcmp(command,"exit")==0){
                 //puts("end of the game");
 
@@ -284,7 +285,7 @@ int main(){
                 //puts("ready to fire");
                 // puts("hello 2");
                 input_uncog=1;
-            if(buffer2[6]!=' '){
+            if((buffer2[6]!=' ')||(count_input2<3)){
                 printf("\nInvalid coordinates\n");
                 finished=0;
             }else{
