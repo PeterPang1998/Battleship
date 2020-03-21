@@ -290,7 +290,7 @@ int main(){
             
             if(hit_result!='N'&&(result1==0)){
                 printf("\n");
-                puts("We have hit the target!");
+               
                 int win_or_not;
                 if((turn+1)==1){
                         //draw(board_hit1);
@@ -300,6 +300,9 @@ int main(){
                             printf("Player %d wins!",turn+1);
                             return 0;
                         }
+                        else if(win_or_not==1){
+                             puts("We have hit the target!");
+                        }
                        
                     }else if ((turn+1)==2){
                        // draw(board_hit2);
@@ -308,6 +311,9 @@ int main(){
                         if(win_or_not==0){
                             printf("Player %d wins!",turn+1);
                             return 0;
+                        }
+                         else if(win_or_not==1){
+                             puts("We have hit the target!");
                         }
                         // turn=(turn+1)%2;
                     }
