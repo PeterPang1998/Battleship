@@ -47,7 +47,6 @@ void draw(char board[8][8]){
          }
          printf("\n");
     }
-     printf("\n");
 
 }
 int check_valid(char board[8][8],int row, int col, char dir,int type){
@@ -228,6 +227,7 @@ int main(){
     int finished=0;
     while(game_on==1){
         input_uncog=0;
+         printf("\n");
         if (first_round==0){
             printf("\n");
             printf("All boats set up, Player %d can now strike.\n",turn+1);
