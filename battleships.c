@@ -386,7 +386,7 @@ int main(){
                  }
                 }
                 if(win==1){
-                    printf("Player %d wins!",turn+1);
+                    printf("Player %d wins!\n",turn+1);
                     game_on=0;
                 }
             }
@@ -397,7 +397,7 @@ int main(){
                  }
                 }
                 if(win==1){
-                    printf("Player %d wins!",turn+1);
+                    printf("Player %d wins!\n",turn+1);
                     game_on=0;
                 }
             }
