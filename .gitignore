@@ -1,0 +1,15 @@
+# Ignore Everything
+*
+
+# But not with the following subfix
+!*.c
+!*.cpp
+!*.md
+!*.html
+!*.png
+
+# Or directories
+!*/
+!.gitignore
+!README.md
+!Makefile
